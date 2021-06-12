@@ -1,0 +1,104 @@
+.Day {
+  cursor: pointer;
+  border: 1px solid #333;
+  border-radius: 5px;
+  margin-left: 10px;
+  padding: 10px;
+  flex-grow: 1;
+  height: 100px;
+  width: calc(100% - 20px - 20px - 2px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.Day.hasIPOs:hover {
+  border: 1px solid blue;
+  background-color: #EEF;
+}
+
+.Day .date {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.Day.hasIPOs:hover .date {
+  font-weight: bold;
+}
+
+.MonthView .Day .date {
+  text-align: right;
+}
+
+.Day .no-ipos-message {
+  font-style: italic;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.Day .ipos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+.Day .ipos > li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  font-family: 'Courier New';
+}
+
+.Day .ipos > li:not(:last-child)::after {
+  content: ',';
+  padding-right: 4px;
+}
+
+.Day.isGhosted {
+  background-color: #CCC;
+  color: #333;
+}
+
+.Day:first-child {
+  margin-left: 0;
+}
+  
+.Week .Day {
+  width: calc((100% - 20px - 20px - 2px) / 7);
+}
+
+.WorkWeekView .Week .Day {
+  width: calc((100% - 20px - 20px - 2px) / 5);
+}
+
+@media only screen and (max-width: 799px) {
+  .Day {
+    margin-top: 10px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .Day:first-child {
+    margin-top: 0;
+  }
+  
+  .WorkWeekView .Week .Day,
+  .Week .Day {
+    width: calc(100% - 10px - 10px - 2px);
+  }
+}

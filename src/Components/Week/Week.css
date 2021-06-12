@@ -1,0 +1,13 @@
+.Week {
+  display: flex;
+  flex-direction: row;
+  width: calc(100% - 20px);
+  justify-content: space-between;
+  margin: 10px;
+}
+
+@media only screen and (max-width: 799px) {
+  .Week {
+    flex-direction: column;
+  }
+}
